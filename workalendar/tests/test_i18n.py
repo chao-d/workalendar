@@ -15,7 +15,7 @@ def test_i18n_france():
         assert 'i18n' in tox_env_name
 
         # Commented assertions are not translated yet.
-        # assert holidays[date(2019, 1, 1)] == "Nouvel An"
+        # assert holidays[date(2019, 1, 1)] == "Jour de l'an"
         # assert holidays[date(2013, 4, 1)] == "Lundi de Pâques"
         assert holidays[date(2019, 5, 1)] == "Fête du travail"
         assert holidays[date(2019, 5, 8)] == "Fête de la Victoire"
