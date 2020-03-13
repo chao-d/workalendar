@@ -12,8 +12,10 @@ def test_i18n_france():
     tox_env_name = os.getenv("TOX_ENV_NAME") or ""
     if language.startswith('fr'):   # We're checking French translations
         # This is only happening in "i18n" tests
-        assert 'i18n' in tox_env_name
-
+        assert 'i18n' in tox_env_name, (
+            "tests supposed to be run with "
+            "TOX_ENV_NAME containing 'i18n'"
+        )
         # Commented assertions are not translated yet.
         # assert holidays[date(2019, 1, 1)] == "Jour de l'an"
         # assert holidays[date(2013, 4, 1)] == "Lundi de Pâques"
@@ -31,4 +33,4 @@ def test_i18n_france():
         assert 'i18n' not in tox_env_name
         # We'll just check this assertion, because it's the most common
         # fixed holiday in the world (without any religious origin)
-        assert holidays[date(2013, 5, 1)] == "Labour Day"
+        assert holidays[date(2019, 5, 1)] == "Labour Day"
